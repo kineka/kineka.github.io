@@ -1,0 +1,71 @@
+body{
+  text-align: center;
+  max-width: 960px;
+  margin-left: 90px;
+  margin-right: auto;
+}
+
+
+
+#innhold{
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-gap: 10px;
+    /*grid-auto-rows: minmax(200px, auto);*/
+}
+
+  .Halv-metall{
+    background-color: green;
+    color: white;
+  }
+
+  .Metall{
+    background-color: indigo;
+    color: white;
+  }
+
+  .Gasser{
+    background-color: lightblue;
+  }
+
+
+
+}
+#innhold div{
+  background:pink;
+  padding:30px;
+
+
+}
+
+
+
+  .fire{
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    grid-gap: 10px;
+  }
+
+  .fire p{
+    border: 5px solid white;
+    padding: 10px;
+  }
+
+  div{
+  border: solid black;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
+  }
+
+  #to {
+    grid-column: 18;
+  }
+
+ #fem {
+   grid-column: 13;
+ }
+
+ #tretten{
+   grid-column: 13;
+ }
