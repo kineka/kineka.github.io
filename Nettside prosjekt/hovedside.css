@@ -25,9 +25,11 @@ main{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
-  grid-row-gap: 45px;
+  grid-row-gap: 40px;
   padding-top: 0px;
   padding-left: 35px;
+  padding-bottom: 65px;
+
 }
 
 h1{
@@ -37,4 +39,37 @@ h1{
   font-family: sans-serif;
   font-size: 100px;
   padding-bottom: 0px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+p{
+  text-align: center;
+  font-family: sans-serif;
+  color: black;
+  line-height: 30px;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom:
+}
+h2{
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  padding-right: 20px;
+
+}
+.en{
+  width: 400px;
+  margin: auto;
+
+}
+h3{
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px #000000;
+}
+a{
+  text-decoration: none;
 }
