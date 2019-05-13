@@ -1,0 +1,322 @@
+{
+  "kaffe01" : {
+    "aroma" : "intens",
+    "imageURL" : "nespresso1.jpg",
+    "merke" : "Nespresso",
+    "navn" : "Limited Edition Café İstanbul",
+    "pris" : 143,
+    "type" : "kapsel"
+  },
+  "kaffe02" : {
+    "aroma" : "fruktig",
+    "imageURL" : "nespresso2.png",
+    "merke" : "Nespresso",
+    "navn" : "Master Origin Colombia",
+    "pris" : 200,
+    "type" : "kapsel"
+  },
+  "kaffe03" : {
+    "aroma" : "intens",
+    "imageURL" : "nespresso3.png",
+    "merke" : "Nespresso",
+    "navn" : "Master Origin Mexico",
+    "pris" : 200,
+    "type" : "kapsel"
+  },
+  "kaffe04" : {
+    "aroma" : "intens",
+    "imageURL" : "nespresso4.png",
+    "merke" : "Nespresso",
+    "navn" : "Intenso",
+    "pris" : 188,
+    "type" : "kapsel"
+  },
+  "kaffe05" : {
+    "aroma" : "intens",
+    "imageURL" : "nespresso5.png",
+    "merke" : "Nespresso",
+    "navn" : "Stormio",
+    "pris " : 188,
+    "type" : "kapsel"
+  },
+  "kaffe06" : {
+    "aroma" : "fruktig",
+    "imageURL" : "nespresso6.jpg",
+    "merke" : "Nespresso",
+    "navn" : "Elvazio",
+    "pris" : 188,
+    "type" : "kapsel"
+  },
+  "kaffe07" : {
+    "aroma" : "fruktig",
+    "imageURL" : "nespresso7.jpg",
+    "merke" : "Nespresso",
+    "navn" : "Giornio",
+    "pris" : 143,
+    "type" : "kapsel"
+  },
+  "kaffe08" : {
+    "aroma" : "fruktig",
+    "imageURL" : "nespresso8.jpg",
+    "merke" : "Nespresso",
+    "navn" : "Solelio",
+    "pris" : 188,
+    "type" : "kapsel"
+  },
+  "kaffe09" : {
+    "aroma" : "intens",
+    "imageURL" : "nespresso9.jpg",
+    "merke" : "Nespresso",
+    "navn" : "Hazelino",
+    "pris" : 197,
+    "type" : "kapsel"
+  },
+  "kaffe10" : {
+    "aroma" : "intens",
+    "imageURL" : "nespresso10.jpg",
+    "merke" : "Nespresso",
+    "navn" : "Caramelizio",
+    "pris" : 197,
+    "type" : "kapsel"
+  },
+  "kaffe11" : {
+    "aroma" : "intens",
+    "imageURL" : "nescafe11.jpg",
+    "merke" : "Nescafé",
+    "navn" : "Brasero",
+    "pris" : 40,
+    "type" : "pulver"
+  },
+  "kaffe12" : {
+    "aroma" : "intens",
+    "imageURL" : "nescafe12.jpg",
+    "merke" : "Nescafé ",
+    "navn" : "Gull",
+    "pris" : 99,
+    "type" : "pulver"
+  },
+  "kaffe13" : {
+    "aroma" : "fruktig",
+    "imageURL" : "nescafe13.jpg",
+    "merke" : "Nescafé ",
+    "navn" : "Dolce Gusto Cappuccino",
+    "pris" : 59,
+    "type" : "kapsel"
+  },
+  "kaffe14" : {
+    "aroma" : "intens",
+    "imageURL" : "nescafe14.jpg",
+    "merke" : "Nescafé ",
+    "navn" : "Azera",
+    "pris " : 63,
+    "type" : "pulver"
+  },
+  "kaffe15" : {
+    "aroma" : "fruktig",
+    "imageURL" : "nescafe15.jpg",
+    "merke" : "Nescafé ",
+    "navn" : "Latte Macchiato",
+    "pris " : 32,
+    "type" : "pulver"
+  },
+  "kaffe16" : {
+    "aroma" : "intens",
+    "imageURL" : "nescafe16.jpg",
+    "merke" : "Nescafé ",
+    "navn" : "Dolce Gusto Zoegas",
+    "pris" : 59,
+    "type" : "pulver"
+  },
+  "kaffe17" : {
+    "aroma" : "intens",
+    "imageURL" : "nescafe17.jpg",
+    "merke" : "Nescafé ",
+    "navn" : "Dolce Gusto Grande",
+    "pris" : 59,
+    "type" : "pulver"
+  },
+  "kaffe18" : {
+    "aroma" : "intens",
+    "imageURL" : "nescafe18.jpg",
+    "merke" : "Nescafé ",
+    "navn" : "Dolce Gusto Espresso Intant",
+    "pris" : 58,
+    "type" : "pulver"
+  },
+  "kaffe19" : {
+    "aroma" : "fruktig",
+    "imageURL" : "nescafe19.jpg",
+    "merke" : "Nescafé ",
+    "navn" : "Dolce Gusto Cafe Au Lait",
+    "pris" : 61,
+    "type" : "pulver"
+  },
+  "kaffe20" : {
+    "aroma" : "intens",
+    "imageURL" : "nescafe20.jpg",
+    "merke" : "Nescafé ",
+    "navn" : "Dolce Gusto Americano",
+    "pris" : 47,
+    "type" : "kapsel"
+  },
+  "kaffe21" : {
+    "aroma" : "fruktig",
+    "imageURL" : "friele21.jpg",
+    "merke" : "Friele",
+    "navn" : "Frokostkaffe",
+    "pris" : 32,
+    "type" : "pulver"
+  },
+  "kaffe22" : {
+    "aroma" : "intens",
+    "imageURL" : "friele22.jpg",
+    "merke" : "Friele",
+    "navn" : "Cafe Noir Dark Fusion",
+    "pris" : 57,
+    "type" : "pulver"
+  },
+  "kaffe23" : {
+    "aroma" : "intens",
+    "imageURL" : "friele23.jpg",
+    "merke" : "Friele",
+    "navn" : "Frokostkaffe Mørkbrent",
+    "pris" : 37,
+    "type" : "pulver"
+  },
+  "kaffe24" : {
+    "aroma" : "fruktig",
+    "imageURL" : "friele24.jpg",
+    "merke" : "Friele",
+    "navn" : "Friele Fairtrade",
+    "pris" : 38,
+    "type" : "pulver"
+  },
+  "kaffe25" : {
+    "aroma" : "fruktig",
+    "imageURL" : "friele25.jpg",
+    "merke" : "Friele",
+    "navn" : "Frokostkaffe Koffeinfri",
+    "pris" : 38,
+    "type" : "pulver"
+  },
+  "kaffe26" : {
+    "aroma" : "intens",
+    "imageURL" : "ali26.jpg",
+    "merke" : "Ali",
+    "navn" : "Ali Original",
+    "pris" : 46,
+    "type" : "kapsel"
+  },
+  "kaffe27" : {
+    "aroma" : "intens",
+    "imageURL" : "ali27.jpg",
+    "merke" : "Ali",
+    "navn" : "Ali Mørkbrent",
+    "pris" : 43,
+    "type" : "kapsel"
+  },
+  "kaffe28" : {
+    "aroma" : "intens",
+    "imageURL" : "ali28.jpg",
+    "merke" : "Ali",
+    "navn" : "Ali Frokost",
+    "pris" : 39,
+    "type" : "kapsel"
+  },
+  "kaffe29" : {
+    "aroma" : "fruktig",
+    "imageURL" : "ali29.jpg",
+    "merke" : "Ali",
+    "navn" : "Ali Cappuccino",
+    "pris" : 44,
+    "type" : "kapsel"
+  },
+  "kaffe30" : {
+    "aroma" : "intens",
+    "imageURL" : "evergood30.jpg",
+    "merke" : "Evergood",
+    "navn" : "Evergood Classic",
+    "pris" : 34,
+    "type" : "pulver"
+  },
+  "kaffe31" : {
+    "aroma" : "intens",
+    "imageURL" : "evergood31.jpg",
+    "merke" : "Evergood",
+    "navn" : "Evergood Dark Roast",
+    "pris" : 37,
+    "type" : "pulver"
+  },
+  "kaffe32" : {
+    "aroma" : "fruktig",
+    "imageURL" : "evergood32.jpg",
+    "merke" : "Evergood",
+    "navn" : "Evergood Koffeinfri",
+    "pris" : 32,
+    "type" : "pulver"
+  },
+  "kaffe33" : {
+    "aroma" : "intens",
+    "imageURL" : "movenpick33.jpg",
+    "merke" : "Mövenpick",
+    "navn" : "Der Himmlische",
+    "pris" : 63,
+    "type" : "pulver"
+  },
+  "kaffe34" : {
+    "aroma" : "intens",
+    "imageURL" : "movenpick34.jpg",
+    "merke" : "Mövenpick",
+    "navn" : "Der Himmlische Instant",
+    "pris" : 66,
+    "type" : "pulver"
+  },
+  "kaffe35" : {
+    "aroma" : "intens",
+    "imageURL" : "movenpick35.jpg",
+    "merke" : "Mövenpick",
+    "navn" : "Intenso Espresso",
+    "pris" : 54,
+    "type" : "kapsel"
+  },
+  "kaffe36" : {
+    "aroma" : "fruktig",
+    "imageURL" : "movenpick36.jpg",
+    "merke" : "Mövenpick",
+    "navn" : "Classico Lungo",
+    "pris" : 54,
+    "type" : "kapsel"
+  },
+  "kaffe37" : {
+    "aroma" : "intens",
+    "imageURL" : "coop37jpg",
+    "merke" : "Coop",
+    "navn" : "Mørk og Kraftig",
+    "pris" : 33,
+    "type" : "pulver"
+  },
+  "kaffe38" : {
+    "aroma" : "intens",
+    "imageURL" : "coop38.jpg",
+    "merke" : "Coop",
+    "navn" : "Frokostkaffe",
+    "pris" : 37,
+    "type" : "pulver"
+  },
+  "kaffe39" : {
+    "aroma" : "fruktig",
+    "imageURL" : "coop39.jpg",
+    "merke" : "Coop",
+    "navn" : "Mild og Rund",
+    "pris" : 33,
+    "type" : "pulver"
+  },
+  "kaffe40" : {
+    "aroma" : "fruktig",
+    "imageURL" : "coop40.jpg",
+    "merke" : "Coop",
+    "navn" : "Fyldig og Aromatisk",
+    "pris" : 36,
+    "type" : "pulver"
+  }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="kaffe.css">
+    <title></title>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDpZCSG_IoC41foNdxJ5Zb9_PcvgHQKIM4",
+        authDomain: "kaffe-616f8.firebaseapp.com",
+        databaseURL: "https://kaffe-616f8.firebaseio.com",
+        projectId: "kaffe-616f8",
+        storageBucket: "kaffe-616f8.appspot.com",
+        messagingSenderId: "203940387369"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+     <img width=100% height=50% src="kaffeheader.jpg" alt="header">
+
+    <nav>
+      <a href="kaffe.html">INFORMASJON</a>
+      <a href="utvalg.html">KAFFEUTVALG</a>
+      <a href="handlekurv.html">BESTILLING</a>
+   </nav>
+   <body>
+
+     <button class="utvalg" onclick="visPrisLav()">Pris lav til høy</button>
+     <button class="utvalg" onclick="visPrisHøy()">Pris høy til lav</button>
+     <button class="utvalg" onclick="visFruktig()">Fruktig aroma</button>
+     <button class="utvalg" onclick="visIntens()">Intens aroma</button>
+     <button class="utvalg" onclick="visKapsel()">Kapsel</button>
+     <button class="utvalg" onclick="visPulver()">Pulver</button>
+
+  <main>
+
+  </main>
+  <script>
+    const main = document.querySelector("main");
+    const db = firebase.database();
+    const kaffe = db.ref("Kaffe");
+
+
+    function genererHTML(snapshot){
+      console.log(snapshot.val())
+      let key = snapshot.key;
+      let kaffe = snapshot.val();
+      main.innerHTML +=`
+          <article class="Kaffe">
+            <h1>${kaffe.navn}</h1>
+            <img class="bilder" src="Bilder/${kaffe.imageURL}" alt="">
+            <p>Pris: ${kaffe.pris}</p>
+            <p>Merke: ${kaffe.merke}</p>
+            <a class="link" href="valgtkaffe.html?key=${key}">Les mer </a>
+          </article>
+      `
+    }
+
+    function genererHTMLSnudd(snapshot){
+      console.log(snapshot.val())
+      let key = snapshot.key;
+      let kaffe = snapshot.val();
+      main.innerHTML =`
+          <article class="Kaffe">
+            <h1>${kaffe.navn}</h1>
+            <img class="bilder" src="Bilder/${kaffe.imageURL}" alt="">
+            <p>Pris: ${kaffe.pris}</p>
+            <p>Merke: ${kaffe.merke}</p>
+            <a class="link" href="valgtkaffe.html?key=${key}">Les mer </a>
+          </article>
+      `+ main.innerHTML;
+    }
+
+    function visAlle(){
+      main.innerHTML = ``;
+      kaffe.on("child_added",genererHTML);
+    }
+
+    visAlle();
+
+
+    function visPrisHøy(){
+      main.innerHTML = ``
+      kaffe.orderByChild("pris").on("child_added",genererHTMLSnudd);
+    }
+
+    function visPrisLav(){
+      main.innerHTML = ``
+      kaffe.orderByChild("pris").on("child_added",genererHTML);
+
+    }
+
+    function visFruktig(){
+      main.innerHTML = ``
+      kaffe.orderByChild("aroma").equalTo("fruktig").on("child_added",genererHTML);
+
+    }
+
+    function visIntens(){
+      main.innerHTML = ``
+      kaffe.orderByChild("aroma").equalTo("intens").on("child_added",genererHTML);
+    }
+
+
+    function visKapsel(){
+      main.innerHTML = ``
+      kaffe.orderByChild("type").equalTo("kapsel").on("child_added",genererHTML);
+    }
+
+    function visPulver(){
+      main.innerHTML = ``
+      kaffe.orderByChild("type").equalTo("pulver").on("child_added",genererHTML);
+    }
+
+
+  </script>
+
+  <footer>
+    <h3>Kontaktinformasjon:</h3>
+
+    <p class="kontaktinfo">Mail: kaffespesialisten@hotmail.no</p>
+    <p class="kontaktinfo">Mobil: +47 97188149</p>
+
+    <h3>©Kaffespesialisten 2019</h3>
+  </footer>
+</body>
+</html>
