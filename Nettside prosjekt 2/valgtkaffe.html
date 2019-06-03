@@ -49,11 +49,16 @@
         let key = snapshot.key;
         let kaffe = snapshot.val();
         main.innerHTML +=`
+            <div class="bilde">
+              <img class="bilder" src="Bilder/${kaffe.imageURL}" alt="">
+            </div>
             <article class="Kaffe">
               <h1>${kaffe.navn}</h1>
-              <img class="bilder" src="Bilder/${kaffe.imageURL}" alt="">
+
               <p>Pris: ${kaffe.pris}</p>
               <p>Merke: ${kaffe.merke}</p>
+              <p>Aroma:${kaffe.aroma}</p>
+              <p>Type:${kaffe.type}</p>
             </article>
         `
       }
