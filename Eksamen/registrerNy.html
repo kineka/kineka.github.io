@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="spill.css">
+    <title>Liste over spill</title>
+    <!-- Kobler til firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDpZCSG_IoC41foNdxJ5Zb9_PcvgHQKIM4",
+        authDomain: "kaffe-616f8.firebaseapp.com",
+        databaseURL: "https://kaffe-616f8.firebaseio.com",
+        projectId: "kaffe-616f8",
+        storageBucket: "kaffe-616f8.appspot.com",
+        messagingSenderId: "203940387369"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Tekst</h1>
+      <nav>
+        <a href="registrerNy.html">Legg til nytt spill</a>
+        <a href="spill.html"> Oversikt over spill</a>
+
+      </nav>
+    </header>
+
+  <body>
+    <main class="skjema">
+      <section class="registrer">
+        <form id="skjema">
+          <input id="Primærnøkkel"type="text" required placeholder="Primærnøkkel">
+          <input id="Navn" type="text" required placeholder="Navn">
+          <input id="Utgivelsesår" type="text" required placeholder="Utgivelsesår">
+          <input id="Sjanger" type="text" required placeholder="Sjanger">
+          <input id="Konsoll" type="text" required placeholder="Konsoll">
+          <input id="Video" type="text" required placeholder="Video">
+          <input id="singlemulti" type="text" required placeholder="En/Flerspiller">
+          <button type="submit">Registrer Nytt Spill</button>
+
+
+
+
+        </form>
+      </section>
+    </main>
+    <script>
+      // definerer variable/navn for html elementene jeg trenger
+      const skjema = document.querySelector("#skjema")
+      const navn = document.querySelector("#Navn")
+      const primærnøkkel = document.querySelector("#Primærnøkkel")
+      const år = document.querySelector("#Utgivelsesår")
+      const sjanger = document.querySelector("#Sjanger")
+      const konsoll = document.querySelector ("#Konsoll")
+      const video = document.querySelector ("#Video")
+      const singlemulti = document.querySelector ("#singlemulti")
+      const db = firebase.database();
+      const spill = db.ref("Spill");
+
+      function registrerNy(evt){
+        evt.preventDefault();
+        //Lagrer informasjon som skal være primærnøkkel
+        const nokkel = primærnøkkel.value;
+        //Lagrer all annen data til database, på JSON format
+        const data = {
+          navn: navn.value,
+          utgivelsesår: år.value,
+          sjanger: sjanger.value,
+          konsoll: konsoll.value,
+          video: video.value,
+          singlemulti: singlemulti.value
+
+        }
+        //Kobler det til databasen, primærnøkkel
+        const spillet = spill.child(nokkel)
+        console.log(data);
+        // insert (legger inn ny data i databasen)
+        spillet.set(data);
+      }
+
+      // Fuksjonen ovenfor kjøres da vi trykker på submit knappen
+      skjema.addEventListener("submit",registrerNy);
+
+
+    </script>
+
+
+  </body>
+</html>

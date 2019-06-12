@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="spill.css">
+    <title>Liste over spill</title>
+    <!-- Kobler til firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDpZCSG_IoC41foNdxJ5Zb9_PcvgHQKIM4",
+        authDomain: "kaffe-616f8.firebaseapp.com",
+        databaseURL: "https://kaffe-616f8.firebaseio.com",
+        projectId: "kaffe-616f8",
+        storageBucket: "kaffe-616f8.appspot.com",
+        messagingSenderId: "203940387369"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Tekst</h1>
+      <nav>
+        <a href="registrerNy.html">Legg til nytt spill</a>
+        <a href="spill.html"> Oversikt over spill</a>
+
+      </nav>
+    </header>
+
+
+  <!--  <button class="sortering" onclick="visAlfabetisk()">Alfabetisk rekkefølge</button>
+    <button class="sortering" onclick="visPlaystation()">Playstation spill</button>
+    <button class="sortering" onclick="visXbox()">Xbox spill</button>
+    <button class="sortering" onclick="visPC()">PC spill</button>
+    <button class="sortering" onclick="visEnspiller()">Enspiller</button>
+    <button class="sortering" onclick="visFlerspiller()">Flerspiller</button>
+    <button class="sortering" onclick="visSport()">Sport</button>
+    <button class="sortering" onclick="visSkytespill()">Skytespill</button>
+    <button class="sortering" onclick="visActionspill()">Actionspill</button>
+    <button class="sortering" onclick="visSimulering()">Simulering</button>!-->
+
+    <div class="grid-container">
+  <div class="dropdown">
+    <span>Sorter etter:</span>
+    <div class="dropdown-innhold">
+      <div><a href=javascript:visAlfabetisk()>Alfabetisk rekkefølge</a></div>
+      <div><a href=javascript:visPlaystation()>Playstation 4 spill</a></div>
+      <div><a href=javascript:visPC()>PC spill</a></div>
+      <div><a href=javascript:visXbox()>Xbox spill</a></div>
+      <div><a href=javascript:visEnspiller()>Enspiller</a></div>
+      <div><a href=javascript:visFlerspiller()>Flerspiller</a></div>
+      <div><a href=javascript:visSport()>Sport</a></div>
+      <div><a href=javascript:visSkytespill()>Skytespill</a></div>
+      <div><a href=javascript:visActionspill()>Actionspill</a></div>
+      <div><a href=javascript:visSimulering()>Simulering</a></div>
+
+
+    </div>
+  </div>
+    </div>
+    <main class="hovedmain">
+
+    </main>
+
+    <script>
+      // Kobler til HTML
+    const main = document.querySelector("main");
+    const db = firebase.database();
+    const spill = db.ref("Spill");
+
+    function genererHTML(snapshot){
+      // lagrer spørringen i spill
+      let spill = snapshot.val();
+      let nokkel = snapshot.key;
+
+      // + = gjør at siden flere spillelementer skal vises på siden så legger ikke de seg over hverandre
+      main.innerHTML +=`
+       <div class"spill">
+          <h1 class="header"> ${spill.navn} </h1>
+          <p> Sjanger: ${spill.sjanger}</p>
+          <p> Utgivelsesår: ${spill.utgivelsesår}</p>
+          <a class="link" href="spilldetaljer.html?id=${nokkel}"> Detaljer </a>
+        </div>
+      `
+    }
+
+    function visPlaystation(){
+      main.innerHTML = ``
+      spill.orderByChild("konsoll").equalTo("Playstation 4").on("child_added",genererHTML);
+    }
+    function visXbox(){
+      main.innerHTML = ``
+      spill.orderByChild("konsoll").equalTo("Xbox").on("child_added",genererHTML);
+    }
+
+    function visAlfabetisk(){
+      main.innerHTML = ``
+      spill.orderByChild("navn").startAt("A").endAt("Y").on("child_added",genererHTML);
+    }
+
+    function visPC(){
+      main.innerHTML = ``
+      spill.orderByChild("konsoll").equalTo("PC").on("child_added",genererHTML);
+    }
+    function visEnspiller(){
+      main.innerHTML = ``
+      spill.orderByChild("singlemulti").equalTo("Enspiller").on("child_added",genererHTML);
+    }
+    function visFlerspiller(){
+      main.innerHTML = ``
+      spill.orderByChild("singlemulti").equalTo("Flerspiller").on("child_added",genererHTML);
+    }
+    function visSport(){
+      main.innerHTML = ``
+      spill.orderByChild("sjanger").equalTo("Sport").on("child_added",genererHTML);
+    }
+    function visSkytespill(){
+      main.innerHTML = ``
+      spill.orderByChild("sjanger").equalTo("Skytespill").on("child_added",genererHTML);
+    }
+    function visSimulering(){
+      main.innerHTML = ``
+      spill.orderByChild("sjanger").equalTo("Simulering").on("child_added",genererHTML);
+    }
+    function visActionspill(){
+      main.innerHTML = ``
+      spill.orderByChild("sjanger").equalTo("Actionspill").on("child_added",genererHTML);
+    }
+    //on er en spørring. Dette gjør at alt fra databasen skal vises og sender resultatet til funksjonen genererHTML
+    spill.on("child_added",genererHTML)
+
+
+    </script>
+  </body>
+</html>

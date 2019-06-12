@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="spill.css">
+    <title>Liste over spill</title>
+    <!-- Kobler til firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDpZCSG_IoC41foNdxJ5Zb9_PcvgHQKIM4",
+        authDomain: "kaffe-616f8.firebaseapp.com",
+        databaseURL: "https://kaffe-616f8.firebaseio.com",
+        projectId: "kaffe-616f8",
+        storageBucket: "kaffe-616f8.appspot.com",
+        messagingSenderId: "203940387369"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Tekst</h1>
+      <nav>
+        <a href="registrerNy.html">Legg til nytt spill</a>
+        <a href="spill.html"> Oversikt over spill</a>
+
+      </nav>
+    </header>
+  <body>
+
+    <main class="velg">
+    </main>
+      <button onclick="slettSpill()">Slett dette spillet</button>
+      <script>
+      // Lagrer primærnøkkelen fra URL i en variabel vi kaller id
+      let url_string = window.location.href;
+      let url = new URL (url_string);
+      let id = url.searchParams.get("id");
+
+      main = document.querySelector("main");
+
+      //variabler som kobler til database
+      const db = firebase.database();
+      const spill = db.ref("Spill/" + id);
+
+      function genererHTML(snapshot){
+        valgtSpill= snapshot.val();
+        main.innerHTML = `
+
+
+        ${valgtSpill.video}
+        <article>
+        <h1 class="dheader">${valgtSpill.navn}</h1>
+        <p class="dtekst"> Sjanger: ${valgtSpill.sjanger}</p>
+        <p class="dtekst">Konsoll: ${valgtSpill.konsoll}</p>
+        <p class="dtekst">Enspiller/Flerspiller: ${valgtSpill.singlemulti}</p>
+        <p class="dtekst">Utgivelsesår: ${valgtSpill.utgivelsesår}</p>
+        </article>
+        `
+
+
+
+
+      }
+      spill.on("value", genererHTML);
+
+      function slettSpill(){
+        spill.remove();
+      }
+      </script>
+    </main>
+  </body>
+</html>
